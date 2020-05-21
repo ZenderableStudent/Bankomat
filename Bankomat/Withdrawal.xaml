@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Bankomat.Withdrawal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bankomat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="0,0,1,0" BorderBrush="Black" Grid.Column="0">
+            <StackPanel>
+                <Button Content="Wypłata" FontSize="30" IsEnabled="False"></Button>
+                <Button Content="Wpłata" FontSize="30" Margin="0,10,0,0" IsEnabled="False" HorizontalAlignment="Stretch"></Button>
+                <Button Content="BLIK" FontSize="30" Margin="0,10,0,0" IsEnabled="False" HorizontalAlignment="Stretch"></Button>
+                <Button Content="Zmiana &#x0a;   PIN" FontSize="30" Margin="0,10,0,0" IsEnabled="False" HorizontalAlignment="Stretch"></Button>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock Text="Podaj ile chcesz wypłacić:" Margin="0,30,0,0" FontSize="30"></TextBlock>
+            <TextBox Name="tbWithdraw" Margin="0,10,0,0" BeforeTextChanging="tbWithdraw_BeforeTextChanging"></TextBox>
+            <Button Content="Wypłać" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="30" Click="Wypłać_Click"></Button>
+        </StackPanel>
+        <Border BorderThickness="1,0,0,0" BorderBrush="Black" Grid.Column="2">
+            <StackPanel>
+                <Button Content="Dostępne &#x0a;   środki" FontSize="30" IsEnabled="False" HorizontalAlignment="Stretch"></Button>
+                <Button Content="     Tryb&#x0a;serwisowy" FontSize="30" Margin="0,10,0,0" Click="TrybSerwisowy_Click" HorizontalAlignment="Stretch"></Button>
+                <Border Background="LightGray" Margin="0,10,0,0" HorizontalAlignment="Stretch">
+                    <TextBlock Name="tbStatus" Text="Gotowy" Foreground="DarkGreen" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center"></TextBlock>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

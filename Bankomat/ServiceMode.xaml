@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="Bankomat.ServiceMode"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bankomat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="0,0,1,0" BorderBrush="Black" Grid.Column="0">
+            <StackPanel>
+                <Button Content=" Napełnij&#x0a;pojemniki" FontSize="30" HorizontalAlignment="Stretch" Click="Napelnienie_Click"></Button>
+                <Button Content=" Opróżnij&#x0a;pojemniki" FontSize="30" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="Oproznienie_Click"></Button>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock Text="10zł   x" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="tbManual10" Margin="9,0,0,0" PlaceholderText="0" BeforeTextChanging="tbManual10_BeforeTextChanging"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="20zł   x" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="tbManual20" Margin="9,0,0,0" PlaceholderText="0" BeforeTextChanging="tbManual20_BeforeTextChanging"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="50zł   x" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="tbManual50" Margin="9,0,0,0" PlaceholderText="0" BeforeTextChanging="tbManual50_BeforeTextChanging"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="100zł x" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="tbManual100" Margin="8,0,0,0" PlaceholderText="0" BeforeTextChanging="tbManual100_BeforeTextChanging"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="200zł x" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="tbManual200" Margin="8,0,0,0" PlaceholderText="0" BeforeTextChanging="tbManual200_BeforeTextChanging"></TextBox>
+            </StackPanel>
+            <Button Content="Potwierdź" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="30" Click="NapelnienieManualne_Click"></Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock Text="Ilość 10zł:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="tb10" Text="0" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Ilość 20zł:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="tb20" Text="0" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Ilość 50zł:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="tb50" Text="0" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Ilość 100zł:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="tb100" Text="0" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Ilość 200zł:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock Name="tb200" Text="0" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="W sumie gotówki:" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+                <TextBlock Name="tbSumaGotówki" Text="0" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="20" Foreground="Red"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <Border Grid.Column="3" BorderThickness="1,0,0,0" BorderBrush="Black">
+            <StackPanel>
+                <Button Content="       Tryb&#x0a;użytkownika" FontSize="30" HorizontalAlignment="Stretch" Click="UserMode_Click"></Button>
+                <Border Background="LightGray" Margin="0,10,0,0" HorizontalAlignment="Stretch">
+                    <TextBlock Name="tbStatus" Text="Gotowy" Foreground="DarkGreen" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center"></TextBlock>
+                </Border>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</Page>
